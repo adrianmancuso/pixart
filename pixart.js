@@ -2,6 +2,7 @@ var $brush = $('.brush');
 var	$btn = $('#set-color');
 var $input = $('#color-field');
 var $body = $('body');
+var color = 'green';
 
 for (var i = 0; i < 20; i++) {
 	$body.append("<div class='square'></div>");
@@ -9,17 +10,13 @@ for (var i = 0; i < 20; i++) {
 
 var changeColor = function() {
 	event.preventDefault();
-	var newColor = $input.val();
-	$brush.css("background-color", newColor);
-}
-
-var turnGreen = function() {
-	console.log('green');
+	color = $input.val();
+	$brush.css("background-color", color);
 }
 
 $body.click(function(event){
 	if (event.target.className === 'square') {
-		$(event.target).css("background-color", "green");
+		$(event.target).css("background-color", color);
 	}
 });
 
