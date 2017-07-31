@@ -6,8 +6,10 @@ var color = 'green';
 
 var $movieInput = $('#movie-field');
 var $movieBtn = $('#set-movie');
-var $poster = $('.poster')
+var $poster = $('.poster');
 
+
+var tool = 'paint';
 var wallPaper = '';
 
 
@@ -38,8 +40,11 @@ var changeColor = function() {
 
 $body.mouseover(function(event){
 	if (event.target.className === 'square') {
-		// $(event.target).css("background-color", color);
-		$(event.target).css("background-image", 'url(' + wallPaper + ')');
+		if (tool === 'paint') {	
+			$(event.target).css("background-color", color);
+		} else {
+			$(event.target).css("background-image", 'url(' + wallPaper + ')');
+		}
 	}
 });
 
@@ -52,3 +57,10 @@ $input.keypress(function(event){
 	}
 });
 
+$('#paint-select').click(function(){
+	tool = 'paint';
+});
+
+$('#stamp-select').click(function(){
+	tool = 'stamp';
+});
