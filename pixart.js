@@ -11,7 +11,17 @@ var changeColor = function() {
 	event.preventDefault();
 	var newColor = $input.val();
 	$brush.css("background-color", newColor);
-};
+}
+
+var turnGreen = function() {
+	console.log('green');
+}
+
+$body.click(function(event){
+	if (event.target.className === 'square') {
+		$(event.target).css("background-color", "green");
+	}
+});
 
 $btn.click(function(){changeColor();});
 $input.keypress(function(event){
