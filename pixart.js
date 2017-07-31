@@ -14,7 +14,7 @@ var changeColor = function() {
 	$brush.css("background-color", color);
 }
 
-$body.click(function(event){
+$body.mouseover(function(event){
 	if (event.target.className === 'square') {
 		$(event.target).css("background-color", color);
 	}
